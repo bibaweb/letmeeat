@@ -1,0 +1,45 @@
+
+.recipes {
+  margin: 0 auto;
+}
+
+.recipes__title {
+  text-align: center;
+  font-size: 4rem;
+  margin: 80px 0 50px;
+  padding: 0;
+}
+
+.recipes__form {
+  margin: 0 auto;
+}
+
+.recipes__search {
+  margin: 40px 0 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipes__search-bar {
+  width: 400px;
+  height: 45px;
+}
+
+.recipes__button {
+  font-family: 'Trebuchet MS', 'Arial', sans-serif;
+  display: block;
+  height: 45px;
+  margin-left: 15px;
+}
+
+.recipes__list {
+  margin: 25px auto 0;
+  width: 1000px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+}
