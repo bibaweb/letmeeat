@@ -1,5 +1,10 @@
+@import url(./blocks/header.css);
 @import url(./blocks/recipes.css);
 @import url(./blocks/recipe.css);
+
+body {
+  margin: 0;
+}
 
 page {
   margin: 0 auto;

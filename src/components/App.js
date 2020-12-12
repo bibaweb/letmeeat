@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
+import Header from './Header';
 import Recipe from './Recipe';
 
 function App() {
@@ -7,18 +8,19 @@ function App() {
   const APP_KEY = '6a9b68deb5fcaf325263757bfefa0b8f';
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
+  console.log(recipes[0])
+  const [keyword, setKeyword] = useState('');
   const [query, setQuery] = useState('');
-  const updateSearch = (e) => {
-    setSearch(e.target.value);
+  const updateKeyword = (e) => {
+    setKeyword(e.target.value);
   };
 
-  const getSearch = (e) => {
+  const getRecipe = (e) => {
     e.preventDefault();
-    setQuery(search);
-    setSearch('')
+    setQuery(keyword);
+    setKeyword('');
   };
-  
+
   useEffect(() => {
     getRecipes();
   }, [query]);
@@ -31,31 +33,17 @@ function App() {
     setRecipes(data.hits);
   };
 
-
-
-
-
-
   return (
     <div className="page">
+      <Header
+        keyword={keyword}
+        updateKeyword={updateKeyword}
+        getRecipe={getRecipe}
+      />
       <section className="recipes">
-        <h1 className="recipes__title">Recipes for today</h1>
-        <form onSubmit={getSearch} className="recipes__form">
-          <div className="recipes__search">
-            <input
-              className="recipes__search-bar"
-              value={search}
-              onChange={updateSearch}
-              type="text"
-            />
-            <button className="recipes__button" type="submit">
-              Search recipes
-            </button>
-          </div>
-        </form>
         <ul className="recipes__list">
-          {recipes.map((recipe, i) => (
-            <Recipe recipe={recipe.recipe} key={i} />
+          {recipes.map((recipe) => (
+              <Recipe recipe={recipe.recipe} key={recipe.recipe.calories}/>
           ))}
         </ul>
       </section>

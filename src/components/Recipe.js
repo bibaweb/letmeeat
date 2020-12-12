@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Recipe = ({ recipe }) => {
-  console.log(recipe)
   return (
     <li className="recipe">
-      <p className="recipe__label">{recipe.dietLabels[0]}</p>
+      {recipe.dietLabels.length === 0 ? <p className="recipe__label recipe__label_hidden"></p> : <p className="recipe__label">{recipe.dietLabels[0]}</p>}
       <img src={recipe.image} alt={recipe.label} className="recipe__img" />
       <h2 className="recipe__title">{recipe.label}</h2>
       <p className="recipe__calories">{Math.floor(recipe.calories)} calories</p>
