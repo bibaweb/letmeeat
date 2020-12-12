@@ -7,7 +7,7 @@ function App() {
   const APP_KEY = '6a9b68deb5fcaf325263757bfefa0b8f';
 
   const [recipes, setRecipes] = useState([]);
-  console.log(recipes[0])
+  console.log(recipes[0]);
   const [keyword, setKeyword] = useState('');
   const [query, setQuery] = useState('');
   const updateKeyword = (e) => {
@@ -21,16 +21,15 @@ function App() {
   };
 
   useEffect(() => {
+    const getRecipes = async () => {
+      const response = await fetch(
+        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      );
+      const data = await response.json();
+      setRecipes(data.hits);
+    };
     getRecipes();
   }, [query]);
-
-  const getRecipes = async () => {
-    const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-    );
-    const data = await response.json();
-    setRecipes(data.hits);
-  };
 
   return (
     <div className="page">
@@ -42,7 +41,7 @@ function App() {
       <section className="recipes">
         <ul className="recipes__list">
           {recipes.map((recipe) => (
-              <Recipe recipe={recipe.recipe} key={recipe.recipe.calories}/>
+            <Recipe recipe={recipe.recipe} key={recipe.recipe.calories} />
           ))}
         </ul>
       </section>

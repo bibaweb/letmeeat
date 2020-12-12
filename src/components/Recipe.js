@@ -12,7 +12,7 @@ const Recipe = ({ recipe }) => {
           <li className="recipe__ingredient">{ingredient.text}</li>
         ))}
       </ul>
-      <a href={recipe.url} className="recipe__link" target="_blank">
+      <a href={recipe.url} className="recipe__link" target="_blank" rel="noreferrer">
         Source
       </a>
     </li>
