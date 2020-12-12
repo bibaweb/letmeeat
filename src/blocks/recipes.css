@@ -1,14 +1,16 @@
 
 .recipes {
   margin: 0 auto;
+  background-color: #eeeeee;
 }
 
 .recipes__list {
-  margin: 25px auto 0;
-  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 90%;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
   justify-items: center;
 }

@@ -6,12 +6,16 @@
 
 .header__title {
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #565656;
   padding: 0;
 }
 
 .header__form {
   margin: 0 auto;
+  min-height: 10vh;
 }
 
 .header__search {
@@ -22,13 +26,30 @@
 }
 
 .header__search-bar {
-  width: 400px;
+  padding: 10px;
+  width: 50%;
   height: 45px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .header__button {
   font-family: 'Trebuchet MS', 'Arial', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
   display: block;
-  height: 45px;
+  padding: 10px 20px;
+  height: 55px;
   margin-left: 15px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background-color: lightbeige;
+  border: none;
+  color: #6c6c6c;
 }
