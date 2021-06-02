@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Header';
+import Search from './Search';
 import Recipe from './Recipe';
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="page">
-      <Header
+      <Search
         keyword={keyword}
         updateKeyword={updateKeyword}
         getRecipe={getRecipe}

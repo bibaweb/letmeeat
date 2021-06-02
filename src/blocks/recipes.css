@@ -1,12 +1,13 @@
 
 .recipes {
   margin: 0 auto;
+  padding: 50px 0 90px;
   background-color: #eeeeee;
 }
 
 .recipes__list {
   margin: 0 auto;
-  padding-top: 40px;
+  padding: 0;
   max-width: 90%;
   display: grid;
   grid-template-rows: auto;
